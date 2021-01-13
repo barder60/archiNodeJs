@@ -1,10 +1,8 @@
 'use strict';
+const mongoose = require('mongoose') 
 
-const mongoose = require('mongoose');
-//const environment = require('dotenv').config(); 
-
-const connectMongo = async (uri) => {
-    await mongoose.connect(uri, {
+const connectMongo = async () => {
+    await mongoose.connect(process.env.MONGODB_ADDON_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false
@@ -16,4 +14,4 @@ const connectMongo = async (uri) => {
     return mongoose.connection
   }
 
-module.exports = connectMongo;
+module.exports = connectMongo

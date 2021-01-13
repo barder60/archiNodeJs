@@ -1,20 +1,19 @@
+require('dotenv').config()
 const express = require('express')
 
+const startDatabase = require('./src/infrastructure/setUp/startDatabase')
+const connectMongo = require('./src/infrastructure/orm/mongoose')
  
-const initializeRoutes = app => {
-  app.use('/', res.send('Hello World'))
-}
-
 const start = async () => {
-  await connectMongo(process.env.MONGODB_ADDON_URI)
+  
+  await startDatabase(process.env.DATABASECHOICE)
   
   const app = express()
 
-  initializeRoutes(app)
-
-  app.listen(process.env.PORT, () =>
-    log(`Lancement de l'application sur le port ${process.env.PORT}`))
+  app.listen(process.env.APP_PORT, () =>
+    console.log(`Lancement de l'application sur le port ${process.env.APP_PORT}`))
 }
+
 
 start();
  
