@@ -1,25 +1,22 @@
 module.exports = class {
-    persist(domainUser) {
+    persist(domainTicket) {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
   
-    merge(domainUser) {
+    merge(domainTicket) {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
   
-    remove(userId) {
+    remove(ticketId) {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
-  
-    getById(userId) {
+    
+    findById(ticketId) {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
-  
-    getByEmail(email) {
-        throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
-    }
-  
+    
     find() {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
+  
   }

@@ -1,21 +1,17 @@
 module.exports = class {
-    persist(domainUser) {
+    persist(domainTransaction) {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
   
-    merge(domainUser) {
+    merge(domainTransaction) {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
   
-    remove(userId) {
+    remove(transactionId) {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
   
-    getById(userId) {
-        throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
-    }
-  
-    getByEmail(email) {
+    findById(transactionId) {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
   
