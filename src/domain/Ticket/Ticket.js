@@ -1,7 +1,6 @@
 module.exports = class {
-    constructor(id = null, price, statut) {
+    constructor(id = null, price) {
       this.id = id;
       this.price = price
-      this.statut = statut
     }
   }

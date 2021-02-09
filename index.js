@@ -1,12 +1,12 @@
 require('dotenv').config()
 const express = require('express')
 
-const connectMongo = require('./src/infrastructure/orm/mongoose')
+const connectMongo = require('./src/infrastructure/repositories/mongo/mongoose')
 const startDatabase = require('./src/infrastructure/setUp/startDatabase')
 const startServer = require('./src/infrastructure/webServerFramework/startApp')
- 
+
 const start = async () => {
-  
+
   await startDatabase(process.env.APP_DATABASE_CHOICE)
 
   const server = await startServer(process.env.APP_WEBSERVER_CHOICE)
@@ -18,4 +18,4 @@ const start = async () => {
 
 
 start();
- 
+

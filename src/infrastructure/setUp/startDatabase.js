@@ -1,6 +1,6 @@
 const { isEqual } = require('lodash')
 
-const connectMongo = require('../orm/mongoose')
+const connectMongo = require('../repositories/mongo/mongoose')
 
 const startDatabase = async (databaseChoice) => {
     if(isEqual(databaseChoice, 'mongodb')) {
@@ -8,6 +8,6 @@ const startDatabase = async (databaseChoice) => {
     } else {
         connectMongo()
     }
-} 
+}
 
 module.exports = startDatabase
