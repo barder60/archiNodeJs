@@ -1,7 +1,7 @@
 module.exports = class {
-    constructor(id = null, createAt, typeTransac, idUser, idTicket) {
+    constructor(id = null, createdAt , typeTransac, idUser, idTicket) {
       this.id = id;
-      this.createAt = createAt
+      this.createdAt = createdAt
       this.typeTransac = typeTransac
       this.idUser = idUser
       this.idTicket = idTicket

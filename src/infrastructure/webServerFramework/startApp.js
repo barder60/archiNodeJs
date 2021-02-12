@@ -5,18 +5,12 @@ const startFastify = require('./fastify/startFastify')
 
 const startServer = async (webServerChoice) => {
     if(isEqual(webServerChoice, 'express')) {
-        const server = await startExpress()
-
-        server.webServerChoice = 'Express'
-        
-        return server
+        return startExpress()
     } else {
-        const server = await startFastify()
-
-        server.webServerChoice = 'Fastify'
-        
-        return server
+        return startFastify()
     }
 }
 
-module.exports = startServer
+module.exports = {
+    startServer
+}

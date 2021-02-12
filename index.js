@@ -1,9 +1,7 @@
 require('dotenv').config()
-const express = require('express')
-
 const connectMongo = require('./src/infrastructure/repositories/mongo/mongoose')
 const startDatabase = require('./src/infrastructure/setUp/startDatabase')
-const startServer = require('./src/infrastructure/webServerFramework/startApp')
+const { startServer } = require('./src/infrastructure/webServerFramework/startApp')
 
 const start = async () => {
 
@@ -17,5 +15,4 @@ const start = async () => {
 }
 
 
-start();
-
+start()

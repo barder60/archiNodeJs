@@ -1,4 +1,4 @@
-const User = require('../../../domain/User')
+const User = require('./../../../domain/User/User')
 const MongooseUser = require('./schemas/User')
 const UserRepository = require('../../../domain/User/UserRepository')
 
@@ -10,7 +10,7 @@ module.exports = class extends UserRepository {
 
     async persist(userEntity) {
       const { firstName, lastName, email } = userEntity;
-      const mongooseUser = new MongooseUser({ firstName, lastName, email, password });
+      const mongooseUser = new MongooseUser({ firstName, lastName, email });
       await mongooseUser.save();
       return new User(mongooseUser.id, mongooseUser.firstName, mongooseUser.lastName, mongooseUser.email);
     }

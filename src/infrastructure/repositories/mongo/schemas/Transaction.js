@@ -1,4 +1,4 @@
-const mongoose = require('../mongoose');
+const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema;
 
@@ -7,9 +7,10 @@ const  transactionSchema = new mongoose.Schema({
       type:Date,
       default:Date.now(),
     },
-  typeTransac:{ 
+  typeTransac:{
       type: String,
-      enum: ['Réservation', 'Remboursement']
+      enum: ['Réservation', 'Remboursement', 'pas repondu'],
+      default: 'pas repondu'
     },
   idUser: {
        type: Schema.Types.ObjectId,

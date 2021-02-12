@@ -1,6 +1,6 @@
 const fastify = require('fastify')({ logger: true })
 
-const healthcheck = require('./../healthcheck')
+const { initializeRoutes } = require('./index')
 
 const startFastify = async () => {
     try {
@@ -12,10 +12,5 @@ const startFastify = async () => {
         process.exit(1)
     }
 }
-
-
-const initializeRoutes = app => {
-    app.use('/', healthcheck)
-  }
 
 module.exports = startFastify
