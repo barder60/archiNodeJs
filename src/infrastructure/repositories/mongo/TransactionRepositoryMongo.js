@@ -14,7 +14,7 @@ module.exports = class extends TransactionRepository {
         await mongooseTransaction.save();
         return new Transaction(
             mongooseTransaction.id,
-            mongooseTransaction.createAt,
+            mongooseTransaction.createdAt,
             mongooseTransaction.typeTransac,
             mongooseTransaction.idUser,
             mongooseTransaction.idTicket
@@ -26,7 +26,7 @@ module.exports = class extends TransactionRepository {
         const mongooseTransaction = MongooseTransaction.findByIdAndUpdate(id, { typeTransac, idUser, idTicket });
         return new Transaction(
             mongooseTransaction.id,
-            mongooseTransaction.createAt,
+            mongooseTransaction.createdAt,
             mongooseTransaction.typeTransac,
             mongooseTransaction.idUser,
             mongooseTransaction.idTicket
@@ -41,7 +41,7 @@ module.exports = class extends TransactionRepository {
         const mongooseTransaction = await MongooseTransaction.findById(TransactionId);
         return new Transaction(
             mongooseTransaction.id,
-            mongooseTransaction.createAt,
+            mongooseTransaction.createdAt,
             mongooseTransaction.typeTransac,
             mongooseTransaction.idUser,
             mongooseTransaction.idTicket
@@ -50,7 +50,6 @@ module.exports = class extends TransactionRepository {
 
     async findByUserIdWithAnswer(idUser) {
         const mongooseTransactions = await MongooseTransaction.find({ idUser, typeTransac: { $ne: "pas repondu" } })
-        // console.log(mongooseTransactions)
         return mongooseTransactions.map((mongooseTransaction) => {
             return new Transaction(
                 mongooseTransaction.id,
@@ -67,7 +66,7 @@ module.exports = class extends TransactionRepository {
         return mongooseTransactions.map((mongooseTransaction) => {
             return new Transaction(
                 mongooseTransaction.id,
-                mongooseTransaction.createAt,
+                mongooseTransaction.createdAt,
                 mongooseTransaction.typeTransac,
                 mongooseTransaction.idUser,
                 mongooseTransaction.idTicket
@@ -80,7 +79,7 @@ module.exports = class extends TransactionRepository {
         return mongooseTransactions.map((mongooseTransaction) => {
             return new Transaction(
                 mongooseTransaction.id,
-                mongooseTransaction.createAt,
+                mongooseTransaction.createdAt,
                 mongooseTransaction.typeTransac,
                 mongooseTransaction.idUser,
                 mongooseTransaction.idTicket

@@ -15,9 +15,11 @@ module.exports = class {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
 
-    find() {
+    async findByUserIdWithAnswer(idUser) {
         throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
     }
 
-
+    find() {
+        throw new Error('ERR_METHOD_NOT_IMPLEMENTED');
+    }
   }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node_modules/.bin/jest --forceExit"
+    "test": ".\\node_modules\\.bin\\jest --forceExit"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,8 @@
     "fastify": "^3.9.2",
     "jest": "^26.6.3",
     "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "mongodb-memory-server": "^6.9.3",
     "mongoose": "^5.11.8",
     "supertest": "^6.1.3"
   }

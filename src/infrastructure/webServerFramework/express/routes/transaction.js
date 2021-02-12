@@ -16,7 +16,7 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
-router.get('/user/:id/noanswer', async (req, res, next) => {
+router.get('/user/:id/noAnswer', async (req, res, next) => {
     const userId = get(req, 'params.id')
 
     try {
@@ -41,10 +41,10 @@ router.get('/user/:id/withAnswer', async (req, res, next) => {
 })
 
 router.put('/', async (req, res, next) => {
-    const { createAt, typeTransac, idUser, idTicket } = req.body
+    const { typeTransac, idUser, idTicket } = req.body
 
     try {
-        const transaction = await TransactionController.createTransaction(createAt, typeTransac, idUser, idTicket)
+        const transaction = await TransactionController.createTransaction(typeTransac, idUser, idTicket)
 
         return res.json({ transaction })
     } catch (err) {
