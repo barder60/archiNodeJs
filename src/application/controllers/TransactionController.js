@@ -7,6 +7,7 @@ const getTransaction = require('../use_cases/transaction/getTransaction')
 const createTransaction = require('../use_cases/transaction/createTransaction')
 const findUserTransactionNoAnswer = require('../use_cases/transaction/findUserTransactionNoAnswer')
 const findByUserIdWithAnswer = require('../use_cases/transaction/findUserTransactionWithAnswer')
+const transactionList = require('../use_cases/transaction/transactionList')
 
 module.exports = {
     async createTransaction(typeTransac, idUser, idTicket) {
@@ -24,5 +25,9 @@ module.exports = {
     async getUserTransactionWithAnswer(userId) {
         const TransactionRepository = loadRepository.mongodb.TransactionRepository
         return await findByUserIdWithAnswer(userId, { TransactionRepository })
-    }
+    },
+    async getTransactionList() {
+        const TransactionRepository = loadRepository.mongodb.TransactionRepository
+        return await transactionList({ TransactionRepository })
+    },
 }
