@@ -4,6 +4,16 @@ const router = express.Router()
 
 const TransactionController = require('./../../../../application/controllers/TransactionController')
 
+router.get('/transaction', async(req, res, next) => {
+    try {
+        const transaction = await TransactionController.getTransactionList()
+
+        return res.json({ transaction })
+    } catch(err) {
+        return next(err)
+    }
+})
+
 router.get('/:id', async (req, res, next) => {
     const transactionId = get(req, 'params.id')
 
